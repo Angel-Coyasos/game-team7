@@ -1,3 +1,5 @@
+import { PhaseConstructor } from '../components/phases/phase-constructor.js';
+import { LiveCounter } from '../components/liveCounter.js';
 
 export class Game extends Phaser.Scene {
 
