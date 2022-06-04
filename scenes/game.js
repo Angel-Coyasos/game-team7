@@ -1,7 +1,5 @@
-
 import { PhaseConstructor } from '../components/phases/phase-constructor.js';
 import { LiveCounter } from '../components/liveCounter.js';
-
 
 export class Game extends Phaser.Scene {
 
@@ -15,7 +13,6 @@ export class Game extends Phaser.Scene {
     this.liveCounter = new LiveCounter(this, 3);
   }
   
-
   preload() {
     this.load.image('background', '../images/background.png');
     this.load.image('platform', '../images/platform.png');
