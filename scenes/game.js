@@ -15,8 +15,9 @@ export class Game extends Phaser.Scene {
   
   preload() {
     this.load.image('background', '../images/background.png');
+    this.load.image('phase1', '../images/phase1.jpg');
     this.load.image('platform', '../images/platform.png');
-    this.load.image('ball', '../images/ball.png');
+    this.load.image('ball', '../images/ball2.png');
     this.load.image('bluebrick', '../images/brickBlue.png');
     this.load.image('blackbrick', '../images/brickBlack.png');
     this.load.image('greenbrick', '../images/brickGreen.png');
@@ -35,10 +36,16 @@ export class Game extends Phaser.Scene {
     this.load.audio('phasechange', '../sounds/phasechange.ogg');
   }
 
+
   create() {
     this.physics.world.setBoundsCollision(true, true, true, false);
     
     this.add.image(410, 250, 'background');
+
+    this.phase1Image = this.add.image(410, 250, 'phase1');
+    this.phase1Image.visible = false;
+
+    
     
     this.liveCounter.create();
     
@@ -49,6 +56,7 @@ export class Game extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     
     this.ball = this.physics.add.image(385, 430, 'ball');
+    this.ball.setScale(0.03)
     this.ball.setBounce(1);
     this.ball.setCollideWorldBounds(true);
     this.ball.setData('glue', true);
