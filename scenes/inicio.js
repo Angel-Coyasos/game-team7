@@ -14,7 +14,6 @@ export class Inicio extends Phaser.Scene {
   
   create() {
     this.backImage = this.add.image(400, 250, 'backgroundInit');
-    this.backImage.setScale(1)
     this.add.image(410, 250, 'inicio'); //imagene que diga destruye mundos
     this.playButton.create();
   }

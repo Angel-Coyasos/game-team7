@@ -12,7 +12,7 @@ export class Game extends Phaser.Scene {
     this.score = 0;
     this.liveCounter = new LiveCounter(this, 3);
   }
-  
+
   preload() {
     this.load.image('background', '../images/background.png');
     this.load.image('phase1', '../images/phase1.jpg');
@@ -56,7 +56,7 @@ export class Game extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     
     this.ball = this.physics.add.image(385, 430, 'ball');
-    this.ball.setScale(0.03)
+    this.ball.setScale(0.025)
     this.ball.setBounce(1);
     this.ball.setCollideWorldBounds(true);
     this.ball.setData('glue', true);
@@ -158,7 +158,7 @@ export class Game extends Phaser.Scene {
   }
 
   setInitialPlatformState() {
-    
+    this.liveLostSample.play();
     this.platform.x = 400;
     this.platform.y = 460;
     this.ball.setVelocity(0,0);
