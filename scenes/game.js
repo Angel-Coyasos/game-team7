@@ -15,7 +15,9 @@ export class Game extends Phaser.Scene {
 
   preload() {
     this.load.image('background', '../images/background.png');
-    this.load.image('phase1', '../images/phase1.jpg');
+    this.load.image('backgroundPhase1', '../images/phase1.jpg');
+    this.load.image('backgroundPhase3', '../images/phase3.jpg');
+    this.load.image('backgroundPhase5', '../images/phase5.jpg');
     this.load.image('platform', '../images/platform.png');
     this.load.image('ball', '../images/ball2.png');
     this.load.image('bluebrick', '../images/brickBlue.png');
@@ -40,13 +42,10 @@ export class Game extends Phaser.Scene {
   create() {
     this.physics.world.setBoundsCollision(true, true, true, false);
     
-    this.add.image(410, 250, 'background');
-
-    this.phase1Image = this.add.image(410, 250, 'phase1');
+    // this.add.image(410, 250, 'background');
+    this.phase1Image = this.add.image(410, 250, 'backgroundPhase1');
     this.phase1Image.visible = false;
 
-    
-    
     this.liveCounter.create();
     
     this.platform = this.physics.add.image(400, 460, 'platform').setImmovable();

@@ -27,13 +27,17 @@ export class PhaseConstructor {
   nextLevel() {
     this.currentPhase.deleteFixedBricks();
     if(this.phases.length == 0) {
-      this.relatedScene.endGame(true);
+      this.relatedScene.endGame(true)
     } else {
-      return this.create();
+      this.next = create();
+      return this.phase1Image.visible = true;
     }
   }
 
   isPhaseFinished() {
     return this.currentPhase.isPhaseFinished();
   }
+
+
+
 }

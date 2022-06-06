@@ -1,6 +1,7 @@
 import { Phase } from './phase.js'
 
 export class Phase1 extends Phase {
+
   create() {
     this.bricks = this.relatedScene.physics.add.staticGroup({
       key: ['bluebrick', 'orangebrick', 'greenbrick', 'blackbrick', 'yellowbrick', 'blackbrick', 'yellowbrick', 'bluebrick', 'orangebrick', 'greenbrick'],
