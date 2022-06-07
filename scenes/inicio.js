@@ -8,11 +8,14 @@ export class Inicio extends Phaser.Scene {
 
   preload() {
     this.load.image('backgroundInit', '../images/brackgroundInit.jpg');
+    this.load.image('worldRed', '../images/worldRed.png');
     this.playButton.preload();
   }
   
   create() {
     this.backImage = this.add.image(400, 250, 'backgroundInit');
+    this.worlRedImage = this.add.image(400, 350, 'worldRed');
+    this.worlRedImage.setScale(0.8)
     this.playButton.create();
   }
 }

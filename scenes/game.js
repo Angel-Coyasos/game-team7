@@ -22,7 +22,7 @@ export class Game extends Phaser.Scene {
     this.load.image('backgroundPhase5', '../images/phase5.jpg');
     this.load.image('backgroundPhase6', '../images/phase6.jpg');
    
-    this.load.image('platform', '../images/My project.png');
+    this.load.image('platform', '../images/platform.png');
     this.load.image('ball', '../images/ball.png');
 
     this.load.image('planetTitanium', '../images/planetTitanium.png');
