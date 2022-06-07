@@ -10,7 +10,7 @@ export class Game extends Phaser.Scene {
   init() {
     this.phaseConstructor = new PhaseConstructor(this);
     this.score = 0;
-    this.liveCounter = new LiveCounter(this, 3);
+    this.liveCounter = new LiveCounter(this, 5);
   }
 
   preload() {
