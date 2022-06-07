@@ -14,19 +14,30 @@ export class Game extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', '../images/background.png');
+
     this.load.image('backgroundPhase1', '../images/phase1.jpg');
+    this.load.image('backgroundPhase2', '../images/phase2.jpg');
     this.load.image('backgroundPhase3', '../images/phase3.jpg');
+    this.load.image('backgroundPhase4', '../images/phase4.webp');
     this.load.image('backgroundPhase5', '../images/phase5.jpg');
+    this.load.image('backgroundPhase6', '../images/phase6.jpg');
+   
     this.load.image('platform', '../images/platform.png');
-    this.load.image('ball', '../images/ball2.png');
-    this.load.image('bluebrick', '../images/brickBlue.png');
-    this.load.image('blackbrick', '../images/brickBlack.png');
-    this.load.image('greenbrick', '../images/brickGreen.png');
-    this.load.image('orangebrick', '../images/brickOrange.png');
-    this.load.image('yellowbrick', '../images/brickYellow.png');
-    this.load.image('whitebrick', '../images/brickWhite.png');
-    this.load.image('greybrick', '../images/brickGrey.png');
+    this.load.image('ball', '../images/ball.png');
+
+    this.load.image('planetTitanium', '../images/planetTitanium.png');
+    this.load.image('planetNavi', '../images/planetNavi.png');
+    this.load.image('planetAro', '../images/planetAro.png');
+    this.load.image('planetBlue', '../images/planetBlue.png');
+    this.load.image('planetCold', '../images/planetCold.png');
+    this.load.image('planetGreen', '../images/planetGreen.png');
+    this.load.image('planetMorado', '../images/planetMorado.png');
+    this.load.image('planetOrange', '../images/planetOrange.png');
+    this.load.image('planetPurple', '../images/planetPurple.png');
+    this.load.image('planetRed', '../images/planetRed.png');
+    this.load.image('planetRoto', '../images/planetRoto.png');
+    this.load.image('planetVento', '../images/planetVento.png');
+    this.load.image('planetWhite', '../images/planetWhite.png');
 
     this.load.audio('platformimpactsample', '../sounds/platform-impact.ogg');
     this.load.audio('brickimpactsample', '../sounds/brick-impact.ogg');
@@ -36,15 +47,26 @@ export class Game extends Phaser.Scene {
     this.load.audio('startgamesample', '../sounds/start-game.ogg');
     this.load.audio('livelostsample', '../sounds/live-lost.ogg');
     this.load.audio('phasechange', '../sounds/phasechange.ogg');
+
   }
 
 
   create() {
     this.physics.world.setBoundsCollision(true, true, true, false);
+
     
-    // this.add.image(410, 250, 'background');
-    this.phase1Image = this.add.image(410, 250, 'backgroundPhase1');
-    this.phase1Image.visible = false;
+    this.phase1Image = this.add.image(400, 250, 'backgroundPhase1');
+    // this.phase1Image.visible = false;
+    // this.phase2Image = this.add.image(400, 250, 'backgroundPhase2');
+    // this.phase2Image.visible = false;
+    // this.phase3Image = this.add.image(400, 250, 'backgroundPhase3');
+    // this.phase3Image.visible = false;
+    // this.phase4Image = this.add.image(400, 250, 'backgroundPhase4');
+    // this.phase4Image.visible = false;
+    // this.phase5Image = this.add.image(400, 250, 'backgroundPhase5');
+    // this.phase5Image.visible = false;
+    // this.phase6Image = this.add.image(400, 250, 'backgroundPhase6');
+    // this.phase6Image.visible = false;
 
     this.liveCounter.create();
     
@@ -55,7 +77,7 @@ export class Game extends Phaser.Scene {
     this.cursors = this.input.keyboard.createCursorKeys();
     
     this.ball = this.physics.add.image(385, 430, 'ball');
-    this.ball.setScale(0.025)
+    this.ball.setScale(1.5);
     this.ball.setBounce(1);
     this.ball.setCollideWorldBounds(true);
     this.ball.setData('glue', true);
@@ -77,6 +99,7 @@ export class Game extends Phaser.Scene {
   }
 
   update() {
+
     if (this.cursors.left.isDown) {
       this.platform.setVelocityX(-500);
       if(this.ball.getData('glue')) {
@@ -111,6 +134,7 @@ export class Game extends Phaser.Scene {
         this.ball.setData('glue', false);
       }
     }
+
   }
 
   platformImpact(ball, platform) {
@@ -165,5 +189,4 @@ export class Game extends Phaser.Scene {
     this.ball.y = 430;
     this.ball.setData('glue', true);
   }
-
 }

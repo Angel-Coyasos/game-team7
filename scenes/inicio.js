@@ -8,13 +8,11 @@ export class Inicio extends Phaser.Scene {
 
   preload() {
     this.load.image('backgroundInit', '../images/brackgroundInit.jpg');
-    this.load.image('inicio', 'images/congratulations.png');
     this.playButton.preload();
   }
   
   create() {
     this.backImage = this.add.image(400, 250, 'backgroundInit');
-    this.add.image(410, 250, 'inicio'); //imagene que diga destruye mundos
     this.playButton.create();
   }
 }

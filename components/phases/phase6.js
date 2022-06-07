@@ -4,13 +4,13 @@ export class Phase6 extends Phase {
 
   create() {
     this.bricks = this.relatedScene.physics.add.staticGroup({
-      key: ['whitebrick', 'blackbrick', 'whitebrick', 'blackbrick', 'whitebrick'],
+      key: ['planetCold', 'planetAro', 'planetCold', 'planetAro', 'planetCold'],
       frameQuantity: 10,
       gridAlign: {
         width: 10,
         height: 5,
-        cellWidth: 67,
-        cellHeight: 34,
+        cellWidth: 70,
+        cellHeight: 50,
         x: 105,
         y: 70
       }

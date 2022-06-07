@@ -22,6 +22,7 @@ export class PhaseConstructor {
     let CurrenPhaseClass = this.phases.pop();
     this.currentPhase = new CurrenPhaseClass(this.relatedScene);
     return this.currentPhase.create();
+  
   }
 
   nextLevel() {
@@ -29,15 +30,12 @@ export class PhaseConstructor {
     if(this.phases.length == 0) {
       this.relatedScene.endGame(true)
     } else {
-      this.next = create();
-      return this.phase1Image.visible = true;
+      return this.create();
     }
   }
 
   isPhaseFinished() {
     return this.currentPhase.isPhaseFinished();
   }
-
-
 
 }
