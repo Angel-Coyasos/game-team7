@@ -4,9 +4,15 @@
     margin: 0;
 };
 
-body {
-    overflow: hidden;
+.conten{
+    background: linear-gradient(to bottom, rgb(17 41 213 / 60%), rgb(118 33 161 / 60%), rgb(78 19 76 / 45%) ), url(/parctica-pagina/assets/mujer.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
 }
+
+
+
 
 #container{
     display: flex;
@@ -22,8 +28,9 @@ body {
 }
 .container-button button {
     width: 200px;
-    background-color: white; 
-    color: black; 
+    background: linear-gradient(90deg,rgb(20%, 40%, 60%), rgb(60%, 20%, 40%));
+
+    color: white; 
     border: 2px solid #008CBA;
     padding: 15px 32px;
     text-align: center;
