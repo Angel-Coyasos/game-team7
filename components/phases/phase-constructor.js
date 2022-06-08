@@ -22,12 +22,13 @@ export class PhaseConstructor {
     let CurrenPhaseClass = this.phases.pop();
     this.currentPhase = new CurrenPhaseClass(this.relatedScene);
     return this.currentPhase.create();
+  
   }
 
   nextLevel() {
     this.currentPhase.deleteFixedBricks();
     if(this.phases.length == 0) {
-      this.relatedScene.endGame(true);
+      this.relatedScene.endGame(true)
     } else {
       return this.create();
     }
@@ -36,4 +37,5 @@ export class PhaseConstructor {
   isPhaseFinished() {
     return this.currentPhase.isPhaseFinished();
   }
+
 }
