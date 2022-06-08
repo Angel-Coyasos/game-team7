@@ -3,6 +3,7 @@ import { Phase } from './phase.js'
 export class Phase1 extends Phase {
 
   create() {
+  
     this.bricks = this.relatedScene.physics.add.staticGroup({
       key: ['planetWhite', 'planetBlue', 'planetCold', 'planetGreen', 'planetMorado', 'planetOrange', 'planetPurple', 'planetRed', 'planetRoto', 'planetVento'],
       frameQuantity: 1,
@@ -25,4 +26,5 @@ export class Phase1 extends Phase {
     this.configureColisions();
     this.configureColisionsFixed();
   }
+
 }

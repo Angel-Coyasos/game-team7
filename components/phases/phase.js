@@ -22,4 +22,5 @@ export class Phase {
   isPhaseFinished() {
     return (this.bricks.countActive() === 0)
   }
+
 }
