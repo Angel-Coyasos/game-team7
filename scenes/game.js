@@ -129,7 +129,7 @@ export class Game extends Phaser.Scene {
       }
     }
 
-    if (this.cursors.up.isDown) {
+    if (this.cursors.up.isDown || this.cursors.space.isDown || this.cursors.shift.isDown) {
       if (this.ball.getData('glue')) {
         this.startGameSample.play();
         this.ball.setVelocity(-60, -300);
