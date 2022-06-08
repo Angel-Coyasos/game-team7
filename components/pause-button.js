@@ -3,21 +3,27 @@ export class PauseButton {
     this.relatedScene = scene;
   }
 
-  preload() {
-    this.relatedScene.load.spritesheet('pauseButton', 'images/pausebutton.png', { frameWidth: 190, frameHeight: 49 });
-  }
-
   create() {
-    this.startButton = this.relatedScene.add.sprite(400, 30, 'pauseButton').setInteractive();
+    this.pauseButton = this.relatedScene.add.image(400, 25, 'pauseButton').setInteractive();
+    this.pauseButton.visible = true;
+    this.pauseMenu = this.relatedScene.add.image(400, 250, 'pauseMenu').setInteractive();
+    this.pauseMenu.visible = false;
 
-    this.startButton.on('pointerover', () => {
-      this.startButton.setFrame(1);
+    this.pauseButton.on('pointerdown', () => {
+    this.relatedScene.scene.pause('game');
+
+    this.pauseButton.visible = false;
+    this.pauseMenu.visible = true;
+    
     });
-    this.startButton.on('pointerout', () => {
-      this.startButton.setFrame(0);
-    });
-    this.startButton.on('pointerdown', () => {
+
+    this.pauseMenu.on('pointerdown', () => {
       this.relatedScene.scene.start('game');
+
+      this.pauseButton.visible = true;
+      this.pauseMenu.visible = false;
+      
     });
+      
   }
 }

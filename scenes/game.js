@@ -24,6 +24,9 @@ export class Game extends Phaser.Scene {
     this.load.image('backgroundPhase5', '../images/phase5.jpg');
     this.load.image('backgroundPhase6', '../images/phase6.jpg');
 
+    this.load.image('pauseButton', '../images/pausebutton.png');
+    this.load.image('pauseMenu', '../images/menu2.png');
+
     this.load.image('platform', '../images/platform.png');
     this.load.image('ball', '../images/ball.png');
 
@@ -68,10 +71,8 @@ export class Game extends Phaser.Scene {
     this.phase5Image.visible = false;
     this.phase6Image = this.add.image(400, 250, 'backgroundPhase6');
     this.phase6Image.visible = false;
-    
+
     this.liveCounter.create();
-    
-    // this.PauseButton.create();
     
     this.platform = this.physics.add.image(400, 460, 'platform').setImmovable();
     this.platform.body.allowGravity = false;
@@ -99,6 +100,8 @@ export class Game extends Phaser.Scene {
     this.startGameSample = this.sound.add('startgamesample');
     this.liveLostSample = this.sound.add('livelostsample');
     this.phaseChangeSample = this.sound.add('phasechange');
+
+    this.PauseButton.create();
   }
 
   update() {
