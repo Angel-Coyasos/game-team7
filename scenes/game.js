@@ -105,6 +105,7 @@ export class Game extends Phaser.Scene {
   }
 
   update() {
+
     if (this.cursors.left.isDown) {
       this.platform.setVelocityX(-500);
       if(this.ball.getData('glue')) {
