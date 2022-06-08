@@ -1,6 +1,5 @@
 import { PhaseConstructor } from '../components/phases/phase-constructor.js';
 import { LiveCounter } from '../components/liveCounter.js';
-import { PauseButton } from '../components/pause-button.js';
 
 export class Game extends Phaser.Scene {
 
@@ -12,7 +11,6 @@ export class Game extends Phaser.Scene {
     this.phaseConstructor = new PhaseConstructor(this);
     this.score = 0;
     this.liveCounter = new LiveCounter(this, 5);
-    this.PauseButton = new PauseButton(this);
   }
 
   preload() {
@@ -100,8 +98,6 @@ export class Game extends Phaser.Scene {
     this.startGameSample = this.sound.add('startgamesample');
     this.liveLostSample = this.sound.add('livelostsample');
     this.phaseChangeSample = this.sound.add('phasechange');
-
-    this.PauseButton.create();
   }
 
   update() {
