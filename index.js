@@ -5,8 +5,8 @@ import { Congratulations } from './scenes/congratulations';
 
 const config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 500,
+    width: 900,
+    height: 580,
     parent: "container",
     scene: [Inicio, Game, Gameover, Congratulations ],
     physics: {

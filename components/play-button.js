@@ -8,7 +8,7 @@ export class PlayButton {
   }
 
   create() {
-    this.startButton = this.relatedScene.add.sprite(400, 400, 'playButton').setInteractive();
+    this.startButton = this.relatedScene.add.sprite(450, 450, 'playButton').setInteractive();
 
     this.startButton.on('pointerover', () => {
       this.startButton.setFrame(1);

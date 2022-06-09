@@ -12,16 +12,16 @@ export class Phase1 extends Phase {
         height: 4,
         cellWidth: 150,
         cellHeight: 150,
-        x: 135,
+        x: 185,
         y: 150
       }
     });
 
     this.fixedBricks = this.relatedScene.physics.add.staticGroup();
-    this.fixedBricks.create(320, 180, 'planetTitanium');
-    this.fixedBricks.create(480, 180, 'planetTitanium');
-    this.fixedBricks.create(170, 180, 'planetTitanium');
-    this.fixedBricks.create(630, 180, 'planetTitanium');
+    this.fixedBricks.create(220, 180, 'planetTitanium');
+    this.fixedBricks.create(370, 180, 'planetTitanium');
+    this.fixedBricks.create(530, 180, 'planetTitanium');
+    this.fixedBricks.create(680, 180, 'planetTitanium');
 
     this.configureColisions();
     this.configureColisionsFixed();

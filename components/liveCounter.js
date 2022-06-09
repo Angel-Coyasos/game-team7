@@ -6,7 +6,7 @@ export class LiveCounter {
   
     create() {
       let displacement = 60;
-      let firstPosition = 800 - ((this.initialLives - 1) * displacement);
+      let firstPosition = 900 - ((this.initialLives - 1) * displacement);
       this.liveImages = this.relatedScene.physics.add.staticGroup({
         setScale: { x: 0.5, y: 0.5 },
         key: 'platform',
