@@ -5,10 +5,12 @@ export class PlayButton {
 
   preload() {
     this.relatedScene.load.spritesheet('playButton', 'images/playbutton.png', { frameWidth: 190, frameHeight: 49 });
+
   }
 
   create() {
-    this.startButton = this.relatedScene.add.sprite(400, 400, 'playButton').setInteractive();
+    this.startButton = this.relatedScene.add.sprite(600, 400, 'playButton').setInteractive();
+
 
     this.startButton.on('pointerover', () => {
       this.startButton.setFrame(1);
@@ -19,5 +21,7 @@ export class PlayButton {
     this.startButton.on('pointerdown', () => {
       this.relatedScene.scene.start('game');
     });
+   
+    
   }
 }
