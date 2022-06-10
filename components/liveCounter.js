@@ -31,4 +31,11 @@ export class LiveCounter {
       currentLiveLost.disableBody(true, true);
       return false;
     }
+
+    liveWin() {
+
+      this.liveImages.create();
+
+    }
+ 
   }

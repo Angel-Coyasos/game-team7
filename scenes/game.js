@@ -1,5 +1,6 @@
 import { PhaseConstructor } from '../components/phases/phase-constructor.js';
 import { LiveCounter } from '../components/liveCounter.js';
+import { PauseButton } from '../components/pause-button.js';
 
 export class Game extends Phaser.Scene {
 
@@ -11,6 +12,7 @@ export class Game extends Phaser.Scene {
     this.phaseConstructor = new PhaseConstructor(this);
     this.score = 0;
     this.liveCounter = new LiveCounter(this, 5);
+    this.pauseButton = new PauseButton(this);
   }
 
   preload() {
@@ -23,7 +25,6 @@ export class Game extends Phaser.Scene {
     this.load.image('backgroundPhase6', '../images/phase6.jpg');
 
     this.load.image('pauseButton', '../images/pausebutton.png');
-    this.load.image('pauseMenu', '../images/menu2.png');
 
     this.load.image('platform', '../images/platform.png');
     this.load.image('ball', '../images/ball.png');
@@ -55,6 +56,7 @@ export class Game extends Phaser.Scene {
 
 
   create() {
+    
     this.physics.world.setBoundsCollision(true, true, true, false);
 
     this.phase1Image = this.add.image(450, 290, 'backgroundPhase1');
@@ -71,6 +73,7 @@ export class Game extends Phaser.Scene {
     this.phase6Image.visible = false;
 
     this.liveCounter.create();
+    this.pauseButton.create();
     
     this.platform = this.physics.add.image(450, 540, 'platform').setImmovable();
     this.platform.body.allowGravity = false;
@@ -101,7 +104,7 @@ export class Game extends Phaser.Scene {
   }
 
   update() {
-
+   
     if (this.cursors.left.isDown) {
       this.platform.setVelocityX(-600);
       if(this.ball.getData('glue')) {
@@ -161,6 +164,7 @@ export class Game extends Phaser.Scene {
       this.phaseConstructor.nextLevel();
       this.nextBack();
       this.setInitialPlatformState();
+      // this.liveCounter.liveWin();
     }
   }
 
@@ -195,26 +199,20 @@ export class Game extends Phaser.Scene {
   
   nextBack() {
     if (this.phaseConstructor.phases.length == 5) {
-      console.log("level 1");
       this.phase1Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 4) {
-      console.log("level 2");
       this.phase1Image.visible = false;
       this.phase2Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 3) {
-      console.log("level 3");
       this.phase2Image.visible = false;
       this.phase3Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 2) {
-      console.log("level 4");
       this.phase3Image.visible = false;
       this.phase4Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 1) {
-      console.log("level 5");
       this.phase4Image.visible = false;
       this.phase5Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 0) {
-      console.log("level 6");
       this.phase5Image.visible = false;
       this.phase6Image.visible = true;
     }
