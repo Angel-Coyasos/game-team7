@@ -1,4 +1,4 @@
-# world destroyer
+# Worl Destroyer
 ## PON A RODAR LA BOLA Y DESTRUYE TODO
 
 ## Funcionalidad del juego
