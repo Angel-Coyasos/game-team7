@@ -47,9 +47,9 @@ https://github.com/nodesource/distributions/blob/master/README.md
 ## instalacion de servidor web
 https://modern-web.dev/docs/dev-server/overview/
 
+
 Agradecimientos
 
-
-> Agsoftware
-> MICHAEL CAMPO,
-> ANGEL COYASOS
+- AgSoftware
+- Michael Campo
+- Angel Coyasos
