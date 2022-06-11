@@ -1,8 +1,24 @@
 # world destroyer
 ## PON A RODAR LA BOLA Y DESTRUYE TODO
 
+## Funcionalidad del juego
+### Descripcion del juego
 
+Objectivo:
+lanzar la bola al aire, y mantenerla dentro del escenario del juego, meintras destruyes todos los planetas de cada nivel para superar el juego.
 
+Jugabilidad:
+
+para lanzar la bola a rodar presiona:
+- Fecla arriba
+- Barra espaciadora
+- Shift
+
+para mover la plataforma presiona:
+- Fecla a la izquierda para desplazarte a la izquierda.
+- Fecla a la derecha para desplazarte a la derecha.
+
+[![N|Solid](https://png.pngtree.com/png-vector/20210129/ourlarge/pngtree-black-keyboard-arrow-keys-png-image_2846428.jpg)](https://png.pngtree.com/png-vector/20210129/ourlarge/pngtree-black-keyboard-arrow-keys-png-image_2846428.jpg)
 
 
 "                    QUE ES PHASER?
