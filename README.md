@@ -4,11 +4,11 @@
 ## Funcionalidad del juego
 ### Descripcion del juego
 
-Objectivo:
+#### Objectivo:
 
 lanzar la bola al aire, y mantenerla dentro del escenario del juego, meintras destruyes todos los planetas de cada nivel para superar el juego.
 
-Jugabilidad:
+#### Jugabilidad:
 
 para lanzar la bola a rodar presiona:
 - Fecla arriba
