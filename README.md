@@ -24,17 +24,23 @@ para mover la plataforma presiona:
 [![N|Solid](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrj_L9rz3YgtNMqJNvj7PVgqrYGRxoVlhK9g&usqp=CAU)](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrj_L9rz3YgtNMqJNvj7PVgqrYGRxoVlhK9g&usqp=CAU)
 
 
-## Phaser
+## Pahser
 
 Phaser es un motor de juegos 2D realizado sobre Javascript. Es simplemente un framework o biblioteca de código Javascript que puedes incluir en tu página y mediante la cual puedes desarrollar juegos de diferentes tipos. Soporta tanto WebGL como Canvas, de manera automática. Esto quiere decir que, siempre que sea posible usará el estándar de WebGL y, si el navegador del usuario no dispone de esta tecnología, usará un elemento Canvas común.''
 
 -Funciona con servidor node.js 
 -Es un juego divertido y entrenido un a buena opcion para tus descansos.
-- ✨
+
+## Installation
+- Descarga node.js e instalalo en la pagina de node en caso de windomsw,  y desde la terminal en caso de ubunto, junto con su manejador de paquetes "npm",
+- Descargue los archivos en este repositorio en su computadora.
+- desde la terminal, en la carpeta del juego, ejecute npm i --save-dev @web/dev-server, para instalar en su equipo el nodemon.
+- Luego ejecute dentro de la misma carpeta el comando npm install phaser --save: para descargar la libreria de phaser.
+- por ultimo solo ejecute en la terminal el comando npm start y tendra el servidor en el que correra el juego.
+
+
+# Mas informacion sobre node.js y servidores.
 ## instalacion de node
-
-
-
 
 https://github.com/nodesource/distributions/blob/master/README.md
 
