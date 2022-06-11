@@ -8,6 +8,13 @@
 
 lanzar la bola al aire, y mantenerla dentro del escenario del juego, meintras destruyes todos los planetas de cada nivel para superar el juego.
 
+#### Caracteristicas:
+
+- El juego cuenta con 6 nivel o fases para poder posicionarse como ganador.
+- cuenta con las siguiente scenas, pantalla inicial, pantalla del juego, pantalla de game over, pantalla de congratulations, pantalla de menu o pausa con opciones, cada escena se activa segun el juego.
+- cuentas con componentes para contarla las vidas del jugador para gestionar el game over, cuenta con botones para restauras e iniciar el juego, cuenta con botones para salir.
+- tiene un boton para haceder al tutorial donde explican la jugabilidad del juego.
+
 #### Jugabilidad:
 
 para lanzar la bola a rodar presiona:
