@@ -11,7 +11,7 @@ export class Phase6 extends Phase {
         height: 5,
         cellWidth: 70,
         cellHeight: 50,
-        x: 105,
+        x: 135,
         y: 70
       }
     });

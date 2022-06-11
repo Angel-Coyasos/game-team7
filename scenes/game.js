@@ -1,5 +1,6 @@
 import { PhaseConstructor } from '../components/phases/phase-constructor.js';
 import { LiveCounter } from '../components/liveCounter.js';
+import { PauseButton } from '../components/pause-button.js';
 
 export class Game extends Phaser.Scene {
 
@@ -11,6 +12,7 @@ export class Game extends Phaser.Scene {
     this.phaseConstructor = new PhaseConstructor(this);
     this.score = 0;
     this.liveCounter = new LiveCounter(this, 5);
+    this.pauseButton = new PauseButton(this);
   }
 
   preload() {
@@ -18,12 +20,11 @@ export class Game extends Phaser.Scene {
     this.load.image('backgroundPhase1', '../images/phase1.jpg');
     this.load.image('backgroundPhase2', '../images/phase2.jpg');
     this.load.image('backgroundPhase3', '../images/phase3.jpg');
-    this.load.image('backgroundPhase4', '../images/phase4.webp');
+    this.load.image('backgroundPhase4', '../images/phase4.jpg');
     this.load.image('backgroundPhase5', '../images/phase5.jpg');
     this.load.image('backgroundPhase6', '../images/phase6.jpg');
 
     this.load.image('pauseButton', '../images/pausebutton.png');
-    this.load.image('pauseMenu', '../images/menu2.png');
 
     this.load.image('platform', '../images/platform.png');
     this.load.image('ball', '../images/ball.png');
@@ -55,30 +56,32 @@ export class Game extends Phaser.Scene {
 
 
   create() {
+    
     this.physics.world.setBoundsCollision(true, true, true, false);
 
-    this.phase1Image = this.add.image(400, 250, 'backgroundPhase1');
+    this.phase1Image = this.add.image(450, 290, 'backgroundPhase1');
     this.phase1Image.visible = true;
-    this.phase2Image = this.add.image(400, 250, 'backgroundPhase2');
+    this.phase2Image = this.add.image(450, 290, 'backgroundPhase2');
     this.phase2Image.visible = false;
-    this.phase3Image = this.add.image(400, 250, 'backgroundPhase3');
+    this.phase3Image = this.add.image(450, 290, 'backgroundPhase3');
     this.phase3Image.visible = false;
-    this.phase4Image = this.add.image(400, 250, 'backgroundPhase4');
+    this.phase4Image = this.add.image(450, 290, 'backgroundPhase4');
     this.phase4Image.visible = false;
-    this.phase5Image = this.add.image(400, 250, 'backgroundPhase5');
+    this.phase5Image = this.add.image(450, 290, 'backgroundPhase5');
     this.phase5Image.visible = false;
-    this.phase6Image = this.add.image(400, 250, 'backgroundPhase6');
+    this.phase6Image = this.add.image(450, 290, 'backgroundPhase6');
     this.phase6Image.visible = false;
 
     this.liveCounter.create();
+    this.pauseButton.create();
     
-    this.platform = this.physics.add.image(400, 460, 'platform').setImmovable();
+    this.platform = this.physics.add.image(450, 540, 'platform').setImmovable();
     this.platform.body.allowGravity = false;
     this.platform.setCollideWorldBounds(true);
     
     this.cursors = this.input.keyboard.createCursorKeys();
     
-    this.ball = this.physics.add.image(385, 430, 'ball');
+    this.ball = this.physics.add.image(446, 500, 'ball');
     this.ball.setScale(1.5);
     this.ball.setBounce(1);
     this.ball.setCollideWorldBounds(true);
@@ -101,17 +104,17 @@ export class Game extends Phaser.Scene {
   }
 
   update() {
-
+   
     if (this.cursors.left.isDown) {
-      this.platform.setVelocityX(-500);
+      this.platform.setVelocityX(-600);
       if(this.ball.getData('glue')) {
-        this.ball.setVelocityX(-500);
+        this.ball.setVelocityX(-600);
       }
     }
     else if (this.cursors.right.isDown) {
-      this.platform.setVelocityX(500);
+      this.platform.setVelocityX(600);
       if (this.ball.getData('glue')) {
-        this.ball.setVelocityX(500);
+        this.ball.setVelocityX(600);
       }
     }
     else {
@@ -121,7 +124,7 @@ export class Game extends Phaser.Scene {
       }
     }
 
-    if (this.ball.y > 500 && this.ball.active) {
+    if (this.ball.y > 580 && this.ball.active) {
       let gameNotFinished = this.liveCounter.liveLost();
       if (!gameNotFinished) {
         this.liveLostSample.play();
@@ -161,6 +164,7 @@ export class Game extends Phaser.Scene {
       this.phaseConstructor.nextLevel();
       this.nextBack();
       this.setInitialPlatformState();
+      // this.liveCounter.liveWin();
     }
   }
 
@@ -185,36 +189,30 @@ export class Game extends Phaser.Scene {
 
   setInitialPlatformState() {
     this.liveLostSample.play();
-    this.platform.x = 400;
-    this.platform.y = 460;
+    this.platform.x = 450;
+    this.platform.y = 540;
     this.ball.setVelocity(0,0);
-    this.ball.x = 385;
-    this.ball.y = 430;
+    this.ball.x = 446;
+    this.ball.y = 500;
     this.ball.setData('glue', true);
   }
   
   nextBack() {
     if (this.phaseConstructor.phases.length == 5) {
-      console.log("level 1");
       this.phase1Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 4) {
-      console.log("level 2");
       this.phase1Image.visible = false;
       this.phase2Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 3) {
-      console.log("level 3");
       this.phase2Image.visible = false;
       this.phase3Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 2) {
-      console.log("level 4");
       this.phase3Image.visible = false;
       this.phase4Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 1) {
-      console.log("level 5");
       this.phase4Image.visible = false;
       this.phase5Image.visible = true;
     } else if (this.phaseConstructor.phases.length == 0) {
-      console.log("level 6");
       this.phase5Image.visible = false;
       this.phase6Image.visible = true;
     }
