@@ -47,12 +47,13 @@ Phaser es un motor de juegos 2D realizado sobre Javascript. Es simplemente un fr
 - por ultimo solo ejecute en la terminal el comando npm start y tendra el servidor en el que correra el juego.
 
 
-# Mas informacion sobre node.js y servidores.
-## instalacion de node
+## Mas informacion sobre node.js y servidores.
+
+#### instalacion de node
 
 https://github.com/nodesource/distributions/blob/master/README.md
 
-## instalacion de servidor web
+#### instalacion de servidor web
 https://modern-web.dev/docs/dev-server/overview/
 
 
