@@ -32,7 +32,7 @@ para mover la plataforma presiona:
 [![N|Solid](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrj_L9rz3YgtNMqJNvj7PVgqrYGRxoVlhK9g&usqp=CAU)](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrj_L9rz3YgtNMqJNvj7PVgqrYGRxoVlhK9g&usqp=CAU)
 
 
-## Pahser
+## Pasher
 
 Phaser es un motor de juegos 2D realizado sobre Javascript. Es simplemente un framework o biblioteca de código Javascript que puedes incluir en tu página y mediante la cual puedes desarrollar juegos de diferentes tipos. Soporta tanto WebGL como Canvas, de manera automática. Esto quiere decir que, siempre que sea posible usará el estándar de WebGL y, si el navegador del usuario no dispone de esta tecnología, usará un elemento Canvas común.''
 
