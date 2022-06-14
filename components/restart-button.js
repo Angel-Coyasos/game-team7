@@ -8,7 +8,7 @@ export class RestartButton {
     }
   
     create() {
-      this.startButton = this.relatedScene.add.sprite(400, 400, 'button').setInteractive();
+      this.startButton = this.relatedScene.add.sprite(450, 450, 'button').setInteractive();
   
       this.startButton.on('pointerover', () => {
         this.startButton.setFrame(1);

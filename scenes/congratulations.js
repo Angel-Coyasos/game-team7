@@ -13,8 +13,8 @@ export class Congratulations extends Phaser.Scene {
   }
   
   create() {
-    this.add.image(400, 250, 'congratulationsBackground');
+    this.add.image(450, 290, 'congratulationsBackground');
     this.restartButton.create();
-    this.congratsImage = this.add.image(400, 200, 'congratulations');
+    this.congratsImage = this.add.image(450, 300, 'congratulations');
   }
 }
