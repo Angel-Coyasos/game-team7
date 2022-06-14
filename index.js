@@ -2,7 +2,7 @@ import { Inicio } from './scenes/inicio.js';
 import { Game } from './scenes/game.js';
 import { Gameover } from './scenes/game-over.js';
 import { Congratulations } from './scenes/congratulations';
-import { Tutorial } from './scenes/tutorial';
+import { Tutorial } from './scenes/tutorial.js';
 import { Menu } from './scenes/menu.js';
 
 const config = {
